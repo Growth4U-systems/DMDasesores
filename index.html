@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth4U × DMD Asesores — Motor de Confianza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES — GROWTH4U IDENTITY
+           =========================================== */
+        :root {
+            --green: #2EC4A0;
+            --green-light: #e8f9f5;
+            --green-glow: rgba(46, 196, 160, 0.15);
+            --green-border: rgba(46, 196, 160, 0.35);
+            --navy: #1a2744;
+            --navy-light: #243352;
+            --white: #ffffff;
+            --gray-50: #fafbfe;
+            --gray-100: #f7f8fc;
+            --gray-200: #eef0f6;
+            --gray-400: #9099b0;
+            --gray-700: #3d4560;
+            --red-muted: #cc4444;
+
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            --title-size: clamp(1.8rem, 5vw, 3.2rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.4rem);
+            --h3-size: clamp(0.95rem, 2vw, 1.3rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --label-size: clamp(0.55rem, 0.8vw, 0.7rem);
+
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.5rem, 2vw, 2rem);
+            --element-gap: clamp(0.25rem, 1vw, 1rem);
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.6s;
+        }
+
+        /* ===========================================
+           VIEWPORT FITTING: MANDATORY BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            padding: var(--slide-padding);
+        }
+
+        .card, .container, .content-box {
+            max-width: min(90vw, 1000px);
+            max-height: min(80vh, 700px);
+        }
+
+        .feature-list, .bullet-list { gap: clamp(0.4rem, 1vh, 1rem); }
+        .feature-list li, .bullet-list li { font-size: var(--body-size); line-height: 1.4; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        img, .image-container {
+            max-width: 100%;
+            max-height: min(50vh, 400px);
+            object-fit: contain;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 3vw, 2rem);
+                --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+                --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+                --h2-size: clamp(1rem, 3vw, 1.75rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+                --title-size: clamp(1.1rem, 4vw, 2rem);
+                --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+            }
+            .nav-dots, .keyboard-hint, .decorative { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.4rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.5rem);
+                --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+                --body-size: clamp(0.65rem, 1vw, 0.85rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); }
+            .grid { grid-template-columns: 1fr; }
+            .two-col { flex-direction: column !important; }
+            .pillar-grid { grid-template-columns: 1fr !important; }
+            .cases-grid { grid-template-columns: 1fr !important; }
+            .timeline-grid { grid-template-columns: 1fr !important; }
+            .diff-table { font-size: clamp(0.6rem, 2.5vw, 0.8rem); }
+            .stack-grid { grid-template-columns: 1fr !important; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ===========================================
+           GROWTH4U DESIGN SYSTEM
+           =========================================== */
+
+        /* — Slide themes — */
+        .slide-dark {
+            background: var(--navy);
+            background-image: radial-gradient(ellipse at 30% 80%, rgba(46, 196, 160, 0.08) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 20%, rgba(46, 196, 160, 0.04) 0%, transparent 50%);
+            color: var(--white);
+        }
+
+        .slide-light {
+            background: var(--gray-50);
+            color: var(--navy);
+        }
+
+        .slide-white {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* — Labels / eyebrows — */
+        .label {
+            display: inline-block;
+            background: var(--green-glow);
+            color: var(--green);
+            font-size: var(--label-size);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: clamp(0.2rem, 0.5vw, 0.4rem) clamp(0.6rem, 1.2vw, 1rem);
+            border-radius: 100px;
+            margin-bottom: clamp(0.4rem, 1vw, 0.8rem);
+        }
+
+        .slide-dark .label {
+            background: rgba(46, 196, 160, 0.12);
+        }
+
+        /* — Titles — */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        h1 { font-size: var(--title-size); font-weight: 800; }
+        h2 { font-size: var(--h2-size); font-weight: 800; }
+        h3 { font-size: var(--h3-size); font-weight: 700; }
+
+        .accent { color: var(--green); }
+
+        p { font-size: var(--body-size); line-height: 1.55; color: var(--gray-700); }
+        .slide-dark p { color: rgba(255, 255, 255, 0.7); }
+
+        /* — Cards — */
+        .card-light {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: clamp(0.8rem, 1.5vw, 1.4rem);
+        }
+
+        .card-dark {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: clamp(0.8rem, 1.5vw, 1.4rem);
+        }
+
+        .card-tool {
+            background: var(--navy);
+            border: 1px solid var(--green-border);
+            border-radius: 14px;
+            padding: clamp(0.8rem, 1.5vw, 1.4rem);
+            color: var(--white);
+        }
+
+        /* — Metric values — */
+        .metric { color: var(--green); font-weight: 800; font-size: var(--h2-size); }
+        .metric-label { font-size: var(--small-size); color: var(--gray-400); margin-top: 0.2rem; }
+        .slide-dark .metric-label { color: rgba(255,255,255,0.5); }
+
+        /* — CTA button — */
+        .btn-cta {
+            display: inline-block;
+            background: var(--green);
+            color: var(--navy);
+            font-weight: 800;
+            font-size: var(--body-size);
+            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1.2rem, 2.5vw, 2rem);
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(46, 196, 160, 0.3);
+        }
+
+        /* — Quote — */
+        .quote-block {
+            background: var(--gray-100);
+            border-left: 4px solid var(--green);
+            border-radius: 4px 14px 14px 4px;
+            padding: clamp(0.6rem, 1.5vw, 1.2rem);
+            font-style: italic;
+            font-size: var(--body-size);
+            color: var(--gray-700);
+        }
+
+        .slide-dark .quote-block {
+            background: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* — Progress bar — */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: var(--green);
+            z-index: 9999;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* — Nav dots — */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.5rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 9998;
+        }
+
+        .nav-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+
+        .slide-light ~ .nav-dots .nav-dot,
+        .slide-white ~ .nav-dots .nav-dot {
+            background: rgba(26, 39, 68, 0.2);
+        }
+
+        .nav-dot.active {
+            background: var(--green);
+            transform: scale(1.4);
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal,
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .reveal:nth-child(4) { transition-delay: 0.28s; }
+        .reveal:nth-child(5) { transition-delay: 0.36s; }
+        .reveal:nth-child(6) { transition-delay: 0.44s; }
+
+        /* ===========================================
+           SLIDE-SPECIFIC LAYOUTS
+           =========================================== */
+        .two-col {
+            display: flex;
+            gap: clamp(1rem, 3vw, 2.5rem);
+            align-items: flex-start;
+        }
+
+        .two-col > * { flex: 1; }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .pillar-card {
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .pillar-card .pillar-num {
+            font-size: var(--label-size);
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 0.3rem;
+        }
+
+        .pillar-card h3 {
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+        }
+
+        .pillar-card p {
+            font-size: var(--small-size);
+            line-height: 1.4;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .case-card {
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .case-card .case-name {
+            font-weight: 800;
+            font-size: var(--h3-size);
+            margin-bottom: 0.2rem;
+            color: var(--navy);
+        }
+
+        .case-card .case-sector {
+            font-size: var(--label-size);
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .case-metric {
+            margin-bottom: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .case-metric .metric {
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+        }
+
+        .case-metric .metric-label {
+            font-size: clamp(0.55rem, 0.9vw, 0.75rem);
+            color: var(--gray-400);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .timeline-card {
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+            position: relative;
+        }
+
+        .timeline-card .phase-label {
+            font-size: var(--label-size);
+            font-weight: 800;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-card h3 {
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+        }
+
+        .timeline-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-card ul li {
+            font-size: var(--small-size);
+            color: var(--gray-700);
+            padding: 0.15rem 0;
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .timeline-card ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Comparison table */
+        .diff-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: var(--body-size);
+        }
+
+        .diff-table th {
+            text-align: left;
+            padding: clamp(0.3rem, 0.8vw, 0.6rem) clamp(0.5rem, 1vw, 0.8rem);
+            font-weight: 700;
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .diff-table th:nth-child(2) { color: var(--red-muted); }
+        .diff-table th:nth-child(3) { color: var(--green); }
+
+        .diff-table td {
+            padding: clamp(0.3rem, 0.8vw, 0.6rem) clamp(0.5rem, 1vw, 0.8rem);
+            border-bottom: 1px solid var(--gray-200);
+            font-size: var(--small-size);
+        }
+
+        .diff-table td:first-child { font-weight: 600; color: var(--navy); }
+        .diff-table td:nth-child(2) { color: var(--gray-400); }
+        .diff-table td:nth-child(3) { color: var(--navy); font-weight: 600; }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .tool-icon {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 0.3rem;
+        }
+
+        .card-tool h3 { color: var(--white); }
+        .card-tool p { color: rgba(255,255,255,0.6); font-size: var(--small-size); }
+
+        /* — Comparison cards (slide 3) — */
+        .compare-bad {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: clamp(1rem, 2vw, 1.6rem);
+        }
+
+        .compare-bad .compare-label {
+            color: var(--red-muted);
+            font-size: var(--label-size);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+
+        .compare-good {
+            background: var(--navy);
+            border: 1px solid var(--green-border);
+            border-radius: 14px;
+            padding: clamp(1rem, 2vw, 1.6rem);
+            color: var(--white);
+        }
+
+        .compare-good .compare-label {
+            color: var(--green);
+            font-size: var(--label-size);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+
+        .compare-good p { color: rgba(255,255,255,0.7); }
+
+        .compare-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: var(--small-size);
+            padding: clamp(0.15rem, 0.4vw, 0.25rem) 0;
+        }
+
+        .compare-item .icon { font-size: clamp(0.7rem, 1.2vw, 0.9rem); }
+
+        /* CTA slide */
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 { margin-bottom: clamp(0.5rem, 1.5vw, 1rem); }
+        .cta-content p { margin-bottom: clamp(0.8rem, 2vw, 1.5rem); color: rgba(255,255,255,0.7); }
+
+        .cta-details {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            margin-top: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .cta-detail { text-align: center; }
+        .cta-detail .detail-label { font-size: var(--label-size); color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+        .cta-detail .detail-value { font-size: var(--body-size); color: var(--white); font-weight: 700; margin-top: 0.2rem; }
+
+        /* — Partners examples — */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+            gap: clamp(0.4rem, 1vw, 0.8rem);
+        }
+
+        .partner-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.5rem, 1.2vw, 0.8rem);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .partner-item .p-icon { font-size: clamp(0.9rem, 1.8vw, 1.2rem); }
+        .partner-item .p-name { font-size: var(--small-size); font-weight: 600; color: var(--white); }
+        .partner-item .p-type { font-size: clamp(0.5rem, 0.8vw, 0.65rem); color: rgba(255,255,255,0.5); }
+
+        /* Sub-list styling */
+        .sub-points {
+            list-style: none;
+            padding: 0;
+            margin-top: clamp(0.2rem, 0.5vw, 0.4rem);
+        }
+        .sub-points li {
+            font-size: var(--small-size);
+            padding: 0.1rem 0;
+            padding-left: 1.2em;
+            position: relative;
+            color: var(--gray-700);
+        }
+        .sub-points li::before {
+            content: "•";
+            position: absolute;
+            left: 0.3em;
+            color: var(--green);
+            font-weight: 700;
+        }
+        .slide-dark .sub-points li { color: rgba(255,255,255,0.6); }
+
+        /* Pricing highlight */
+        .pricing-box {
+            background: rgba(46, 196, 160, 0.08);
+            border: 1px solid var(--green-border);
+            border-radius: 14px;
+            padding: clamp(0.6rem, 1.5vw, 1rem);
+            text-align: center;
+            margin-top: clamp(0.4rem, 1vw, 0.8rem);
+        }
+
+        .pricing-box .price {
+            font-size: var(--h2-size);
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .pricing-box .price-detail {
+            font-size: var(--small-size);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Niche cards */
+        .niche-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 1vw, 0.8rem);
+        }
+
+        .niche-card {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: clamp(0.5rem, 1vw, 0.8rem);
+            text-align: center;
+        }
+
+        .niche-card .niche-icon { font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin-bottom: 0.2rem; }
+        .niche-card .niche-title { font-size: var(--small-size); font-weight: 700; color: var(--navy); }
+        .niche-card .niche-desc { font-size: clamp(0.55rem, 0.9vw, 0.7rem); color: var(--gray-400); margin-top: 0.15rem; }
+
+        /* Edit mode */
+        .edit-hotzone {
+            position: fixed; top: 0; left: 0;
+            width: 80px; height: 80px;
+            z-index: 10000;
+            cursor: pointer;
+        }
+
+        .edit-toggle {
+            position: fixed;
+            top: 12px; left: 12px;
+            background: var(--navy);
+            color: var(--white);
+            border: 1px solid var(--green-border);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-family: var(--font-body);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10001;
+        }
+
+        .edit-toggle.show,
+        .edit-toggle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        [data-editable] { transition: outline 0.2s; }
+        .edit-mode [data-editable]:hover { outline: 2px dashed var(--green); outline-offset: 4px; cursor: text; }
+        .edit-mode [data-editable]:focus { outline: 2px solid var(--green); outline-offset: 4px; }
+
+        /* Opportunity banner */
+        .opportunity-banner {
+            background: rgba(46, 196, 160, 0.1);
+            border: 1px solid var(--green-border);
+            border-radius: 10px;
+            padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.6rem, 1.2vw, 1rem);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: clamp(0.3rem, 0.8vw, 0.5rem);
+        }
+
+        .opportunity-banner .opp-icon { font-size: clamp(1rem, 2vw, 1.4rem); }
+        .opportunity-banner p { font-size: var(--small-size); color: var(--navy); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- Edit mode toggle -->
+    <div class="edit-hotzone" id="editHotzone"></div>
+    <button class="edit-toggle" id="editToggle">✏️ Editar</button>
+
+    <!-- =============================================
+         SLIDE 1 — TÍTULO
+         ============================================= -->
+    <section class="slide slide-dark" id="slide-1">
+        <div class="slide-content" style="justify-content: center; text-align: center;">
+            <div class="reveal">
+                <span class="label" data-editable>Propuesta estratégica</span>
+            </div>
+            <h1 class="reveal" style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);" data-editable>
+                Growth4U × <span class="accent">DMD Asesores</span>
+            </h1>
+            <p class="reveal" style="font-size: var(--h3-size); color: rgba(255,255,255,0.7); max-width: 650px; margin: 0 auto;" data-editable>
+                Construye tu motor de confianza digital y convierte más sin aumentar tu inversión en paid.
+            </p>
+            <div class="reveal" style="margin-top: clamp(1rem, 2.5vw, 2rem);">
+                <span style="font-size: var(--small-size); color: rgba(255,255,255,0.4);">Abril 2026 · Confidencial</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 2 — EL PROBLEMA
+         ============================================= -->
+    <section class="slide slide-light" id="slide-2">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>El desafío</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                En reclamaciones bancarias, la <span class="accent">confianza</span> decide quién convierte
+            </h2>
+            <div class="two-col reveal" style="margin-bottom: clamp(0.4rem, 1vw, 0.8rem);">
+                <div>
+                    <div class="card-light" style="margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);">
+                        <div class="metric" data-editable>89%</div>
+                        <p class="metric-label" data-editable>de los consumidores buscan opiniones online antes de confiar su caso legal a un despacho</p>
+                    </div>
+                    <div class="card-light">
+                        <div class="metric" data-editable>Solo 15%</div>
+                        <p class="metric-label" data-editable>de afectados por revolving sabe que puede reclamar — hay millones de clientes por captar</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-light" style="margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);">
+                        <div class="metric" data-editable>80%</div>
+                        <p class="metric-label" data-editable>de vuestra adquisición depende de TikTok Ads — si cortas, desaparece</p>
+                    </div>
+                    <div class="card-light">
+                        <div class="metric" data-editable>68/100</div>
+                        <p class="metric-label" data-editable>Trust Score actual — sin presencia en Google ni buscadores IA (ChatGPT, Claude)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-block reveal" data-editable>
+                "Arriaga Asociados, el mayor despacho de reclamaciones masivas de España, acaba de entrar en concurso. Miles de clientes buscan alternativa ahora — quien construya confianza primero, los captará."
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 3 — GASTO vs ACTIVO
+         ============================================= -->
+    <section class="slide slide-white" id="slide-3">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>El cambio</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.6rem, 1.5vw, 1rem);">
+                De <span style="color: var(--red-muted);">alquilar atención</span> a <span class="accent">construir activos</span>
+            </h2>
+            <div class="two-col reveal">
+                <div class="compare-bad">
+                    <div class="compare-label">Gasto recurrente (hoy)</div>
+                    <h3 style="font-size: var(--h3-size); margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);" data-editable>40.000€/mes en TikTok Ads</h3>
+                    <div class="compare-item"><span class="icon">⚠️</span> <span data-editable>Si cortas, desapareces — cero inercia</span></div>
+                    <div class="compare-item"><span class="icon">⚠️</span> <span data-editable>CAC sube cada año (~300-400€ en LSO)</span></div>
+                    <div class="compare-item"><span class="icon">⚠️</span> <span data-editable>Sin posicionamiento SEO ni presencia en buscadores IA</span></div>
+                    <div class="compare-item"><span class="icon">⚠️</span> <span data-editable>640 reviews en Google pero no trabajan para vosotros en la web</span></div>
+                </div>
+                <div class="compare-good">
+                    <div class="compare-label">Activo permanente (Trust Engine)</div>
+                    <h3 style="font-size: var(--h3-size); margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem); color: var(--white);" data-editable>Motor de confianza que crece solo</h3>
+                    <div class="compare-item" style="color: rgba(255,255,255,0.8);"><span class="icon">✅</span> <span data-editable>Artículos en medios que siguen rankeando</span></div>
+                    <div class="compare-item" style="color: rgba(255,255,255,0.8);"><span class="icon">✅</span> <span data-editable>Influencers que generan confianza continua</span></div>
+                    <div class="compare-item" style="color: rgba(255,255,255,0.8);"><span class="icon">✅</span> <span data-editable>SEO + GEO: presencia en Google y ChatGPT</span></div>
+                    <div class="compare-item" style="color: rgba(255,255,255,0.8);"><span class="icon">✅</span> <span data-editable>Reviews automatizadas que convierten visitantes en clientes</span></div>
+                </div>
+            </div>
+            <div class="opportunity-banner reveal">
+                <span class="opp-icon">💡</span>
+                <p data-editable><strong>No hay que aumentar presupuesto.</strong> Redirigimos parte de los 40K€ actuales hacia activos que se acumulan y reducen el CAC a medio plazo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 4 — 4 PILARES DEL TRUST ENGINE
+         ============================================= -->
+    <section class="slide slide-dark" id="slide-4">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>Metodología</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                Los 4 pilares del <span class="accent">Trust Engine</span>
+            </h2>
+            <div class="pillar-grid reveal">
+                <div class="card-dark pillar-card">
+                    <div class="pillar-num">01</div>
+                    <h3 data-editable>Borrowed Trust Partners</h3>
+                    <p data-editable>Identificamos medios, blogs e influencers del sector legal-financiero. Negociamos acuerdos y gestionamos todo: briefs, seguimiento y amplificación.</p>
+                </div>
+                <div class="card-dark pillar-card">
+                    <div class="pillar-num">02</div>
+                    <h3 data-editable>SERP & GEO Positioning</h3>
+                    <p data-editable>Dominamos los resultados cuando alguien busca "reclamar revolving", "abogados deudas" o "DMD Asesores opiniones" — en Google y en buscadores IA.</p>
+                </div>
+                <div class="card-dark pillar-card">
+                    <div class="pillar-num">03</div>
+                    <h3 data-editable>Brand Trust Assets</h3>
+                    <p data-editable>Convertimos vuestras 640 reviews en un sistema automatizado que genera más reviews y las muestra donde importa: web, SERP, fichas.</p>
+                </div>
+                <div class="card-dark pillar-card">
+                    <div class="pillar-num">04</div>
+                    <h3 data-editable>Niche Conversations</h3>
+                    <p data-editable>Participación auténtica en foros y comunidades donde la gente busca ayuda con deudas: Reddit, grupos Facebook, Rankia, ForoCoches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 5 — APLICADO A DMD ASESORES
+         ============================================= -->
+    <section class="slide slide-light" id="slide-5">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>Aplicado a DMD Asesores</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                Partnerships e influencers <span class="accent">para vuestro sector</span>
+            </h2>
+            <div class="two-col reveal">
+                <div>
+                    <h3 data-editable style="margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);">Medios y blogs objetivo</h3>
+                    <ul class="sub-points">
+                        <li data-editable><strong>HelpMyCash / Kelisto</strong> — Comparadores financieros con artículos sobre revolving, alto DA</li>
+                        <li data-editable><strong>Confilegal / Noticias Jurídicas</strong> — Medios jurídicos que aceptan colaboraciones de expertos</li>
+                        <li data-editable><strong>eldiario.es (ConsumoClaro)</strong> — Sección sobre abusos bancarios, alta visibilidad</li>
+                        <li data-editable><strong>Business Insider España</strong> — Finanzas personales, audiencia cualificada</li>
+                        <li data-editable><strong>Rankia (foro + blog)</strong> — Audiencia financiera activa, acepta contenido experto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 data-editable style="margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);">Nichos desatendidos</h3>
+                    <div class="niche-grid" style="margin-bottom: clamp(0.3rem, 0.6vw, 0.4rem);">
+                        <div class="niche-card">
+                            <div class="niche-icon">👤</div>
+                            <div class="niche-title" data-editable>Autónomos</div>
+                            <div class="niche-desc" data-editable>LSO para autónomos con deudas mixtas</div>
+                        </div>
+                        <div class="niche-card">
+                            <div class="niche-icon">👵</div>
+                            <div class="niche-title" data-editable>Mayores 60+</div>
+                            <div class="niche-desc" data-editable>Tarjetas revolving de grandes almacenes</div>
+                        </div>
+                        <div class="niche-card">
+                            <div class="niche-icon">📱</div>
+                            <div class="niche-title" data-editable>Jóvenes 18-30</div>
+                            <div class="niche-desc" data-editable>Micropréstamos y BNPL abusivos</div>
+                        </div>
+                        <div class="niche-card">
+                            <div class="niche-icon">🌍</div>
+                            <div class="niche-title" data-editable>Inmigrantes</div>
+                            <div class="niche-desc" data-editable>Micropréstamos, bajo conocimiento de derechos</div>
+                        </div>
+                    </div>
+                    <div class="quote-block" data-editable>
+                        Contenido hiperespecífico por nicho + influencers que hablan su lenguaje = conversión que el paid genérico no alcanza.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 6 — CASOS DE ÉXITO
+         ============================================= -->
+    <section class="slide slide-white" id="slide-6">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>Resultados probados</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                Casos de éxito en <span class="accent">sectores de alta confianza</span>
+            </h2>
+            <div class="cases-grid reveal">
+                <div class="card-light case-card">
+                    <div class="case-name" data-editable>Bnext</div>
+                    <div class="case-sector" data-editable>Fintech B2C — Banco digital</div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>500K</div>
+                        <div class="metric-label" data-editable>usuarios en 30 meses (de 0)</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>€12,40</div>
+                        <div class="metric-label" data-editable>CAC blended (vs >€50 en paid)</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>×3</div>
+                        <div class="metric-label" data-editable>activación (20% → 70%)</div>
+                    </div>
+                </div>
+                <div class="card-light case-card">
+                    <div class="case-name" data-editable>Bit2Me</div>
+                    <div class="case-sector" data-editable>Fintech B2C — Crypto</div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>-70%</div>
+                        <div class="metric-label" data-editable>reducción del CAC</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>×3</div>
+                        <div class="metric-label" data-editable>LTV triplicado</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" style="font-size: clamp(0.85rem, 1.8vw, 1.2rem);" data-editable>Trust Engine</div>
+                        <div class="metric-label" data-editable>mismo framework aplicable a DMD</div>
+                    </div>
+                </div>
+                <div class="card-light case-card">
+                    <div class="case-name" data-editable>Hospital Capilar</div>
+                    <div class="case-sector" data-editable>Salud B2C — Alta confianza</div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>+€50K</div>
+                        <div class="metric-label" data-editable>facturación mensual adicional</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>7</div>
+                        <div class="metric-label" data-editable>nichos específicos identificados</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="metric" data-editable>200+</div>
+                        <div class="metric-label" data-editable>reviews objetivo (de 69)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-block reveal" style="margin-top: clamp(0.4rem, 1vw, 0.8rem);" data-editable>
+                "Operamos el Trust Engine en los sectores donde la confianza es más crítica: fintech (manejas dinero) y salud (impactas el cuerpo). En ambos, el usuario no actúa sin validación social previa — exactamente como en reclamaciones legales."
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 7 — TIMELINE 6 MESES
+         ============================================= -->
+    <section class="slide slide-light" id="slide-7">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>Plan de ejecución</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                <span class="accent">6 meses</span> para construir tu motor de confianza
+            </h2>
+            <div class="timeline-grid reveal">
+                <div class="card-light timeline-card">
+                    <div class="phase-label">Mes 1 — Fundaciones</div>
+                    <h3 data-editable>Research & Setup</h3>
+                    <ul>
+                        <li data-editable>Análisis competitivo completo del sector</li>
+                        <li data-editable>Segmentación de nichos (autónomos, mayores, jóvenes...)</li>
+                        <li data-editable>Auditoría SERP: qué encuentra alguien al buscar DMD</li>
+                        <li data-editable>Identificación de 20-30 partners potenciales</li>
+                        <li data-editable>Setup de atribución y tracking</li>
+                    </ul>
+                </div>
+                <div class="card-light timeline-card">
+                    <div class="phase-label">Mes 2-3 — Ejecución</div>
+                    <h3 data-editable>Partners & Contenido</h3>
+                    <ul>
+                        <li data-editable>Negociación y onboarding de partners (medios + influencers)</li>
+                        <li data-editable>Artículos SEO en blogs de autoridad (niche editing)</li>
+                        <li data-editable>Contenido de nicho para blog propio</li>
+                        <li data-editable>Sistema automatizado de reviews</li>
+                        <li data-editable>Primeras colaboraciones con influencers</li>
+                    </ul>
+                </div>
+                <div class="card-light timeline-card">
+                    <div class="phase-label">Mes 4-6 — Escala</div>
+                    <h3 data-editable>Optimizar & Transferir</h3>
+                    <ul>
+                        <li data-editable>Escalar canales con mejor ROAS</li>
+                        <li data-editable>Abrir nuevos nichos y partners</li>
+                        <li data-editable>Optimización continua de contenidos</li>
+                        <li data-editable>GEO: posicionar en buscadores IA</li>
+                        <li data-editable>Documentación y handover completo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-box reveal" style="background: rgba(46,196,160,0.06); border: 1px solid rgba(46,196,160,0.2);">
+                <div class="price" style="color: var(--green);" data-editable>3.500€/mes</div>
+                <div class="price-detail" style="color: var(--gray-400);" data-editable>Proyecto de 6 meses · Incluye gestión completa de partners e influencers · Metodología y herramientas incluidas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 8 — DIFERENCIAL GROWTH4U
+         ============================================= -->
+    <section class="slide slide-white" id="slide-8">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>¿Por qué Growth4U?</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                No somos otra agencia <span class="accent">de marketing genérico</span>
+            </h2>
+            <table class="diff-table reveal">
+                <thead>
+                    <tr>
+                        <th data-editable>Aspecto</th>
+                        <th data-editable>Agencia tradicional</th>
+                        <th data-editable>Growth4U</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-editable>Canales</td>
+                        <td data-editable>Solo paid (Meta, TikTok)</td>
+                        <td data-editable>Partnerships + SEO/GEO + Influencers + Paid</td>
+                    </tr>
+                    <tr>
+                        <td data-editable>Partners</td>
+                        <td data-editable>Tú buscas y negocias</td>
+                        <td data-editable>Red existente + negociación llave en mano</td>
+                    </tr>
+                    <tr>
+                        <td data-editable>Influencers</td>
+                        <td data-editable>Coste fijo, sin garantía</td>
+                        <td data-editable>Fee bajo + variable por activación real</td>
+                    </tr>
+                    <tr>
+                        <td data-editable>Iteración</td>
+                        <td data-editable>Reportes mensuales</td>
+                        <td data-editable>Iteración semanal + datos en tiempo real</td>
+                    </tr>
+                    <tr>
+                        <td data-editable>Resultado</td>
+                        <td data-editable>Dependencia permanente del gasto</td>
+                        <td data-editable>Activos que se acumulan y trabajan solos</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="quote-block reveal" style="margin-top: clamp(0.5rem, 1.2vw, 0.8rem);" data-editable>
+                "Venimos del mundo fintech — donde convencer a alguien de confiar su dinero a una marca nueva es el reto más difícil. Ese know-how es directamente aplicable a reclamaciones legales: el cliente necesita la misma validación social antes de confiar su caso."
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 9 — STACK TECNOLÓGICO
+         ============================================= -->
+    <section class="slide slide-dark" id="slide-9">
+        <div class="slide-content">
+            <span class="label reveal" data-editable>Nuestras herramientas</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                Stack <span class="accent">propio con IA</span>
+            </h2>
+            <div class="stack-grid reveal">
+                <div class="card-tool">
+                    <div class="tool-icon">🧠</div>
+                    <h3 data-editable>Sancho CMO</h3>
+                    <p data-editable>IA para research competitivo, identificación de partners y onboarding automatizado. Analiza el sector en horas, no semanas.</p>
+                </div>
+                <div class="card-tool">
+                    <div class="tool-icon">🔍</div>
+                    <h3 data-editable>Horus</h3>
+                    <p data-editable>Motor de SEO y GEO. Domina resultados en Google y buscadores IA (ChatGPT, Claude, Gemini) para keywords de confianza.</p>
+                </div>
+                <div class="card-tool">
+                    <div class="tool-icon">🏗️</div>
+                    <h3 data-editable>Alarife</h3>
+                    <p data-editable>Creación rápida de landings y micrositios optimizados para conversión por nicho y partner.</p>
+                </div>
+                <div class="card-tool">
+                    <div class="tool-icon">📊</div>
+                    <h3 data-editable>PostHog + GHL</h3>
+                    <p data-editable>Analytics de producto, CRM, automatizaciones de seguimiento y tracking multi-touch de cada conversión.</p>
+                </div>
+            </div>
+            <div class="partner-grid reveal" style="margin-top: clamp(0.5rem, 1.2vw, 0.8rem);">
+                <div class="partner-item">
+                    <span class="p-icon">📰</span>
+                    <div>
+                        <div class="p-name" data-editable>HelpMyCash</div>
+                        <div class="p-type">Comparador financiero</div>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <span class="p-icon">⚖️</span>
+                    <div>
+                        <div class="p-name" data-editable>Confilegal</div>
+                        <div class="p-type">Medio jurídico</div>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <span class="p-icon">💰</span>
+                    <div>
+                        <div class="p-name" data-editable>Rankia</div>
+                        <div class="p-type">Comunidad financiera</div>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <span class="p-icon">🎬</span>
+                    <div>
+                        <div class="p-name" data-editable>Influencía</div>
+                        <div class="p-type">Agencia de influencers</div>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <span class="p-icon">📱</span>
+                    <div>
+                        <div class="p-name" data-editable>TikTok Legal</div>
+                        <div class="p-type">Creadores nicho</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 10 — CTA
+         ============================================= -->
+    <section class="slide slide-dark" id="slide-10">
+        <div class="slide-content" style="justify-content: center;">
+            <div class="cta-content">
+                <span class="label reveal" data-editable>Siguiente paso</span>
+                <h2 class="reveal" style="font-size: var(--title-size);" data-editable>
+                    Hablemos de tu <span class="accent">motor de confianza</span>
+                </h2>
+                <p class="reveal" data-editable>
+                    En 6 meses, DMD Asesores puede tener un activo digital que genere clientes sin depender exclusivamente de paid. El momento es ahora — con Arriaga en quiebra, hay una ventana de oportunidad única.
+                </p>
+                <div class="reveal">
+                    <a href="mailto:marta@dmdasesores.com" class="btn-cta" data-editable>Agendar reunión →</a>
+                </div>
+                <div class="cta-details reveal">
+                    <div class="cta-detail">
+                        <div class="detail-label">Próxima reunión</div>
+                        <div class="detail-value" data-editable>Miércoles 16 Abril · 12:00h</div>
+                    </div>
+                    <div class="cta-detail">
+                        <div class="detail-label">Inversión</div>
+                        <div class="detail-value" data-editable>3.500€/mes · 6 meses</div>
+                    </div>
+                    <div class="cta-detail">
+                        <div class="detail-label">Contacto</div>
+                        <div class="detail-value" data-editable>martin@growth4u.io</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         JAVASCRIPT — PRESENTATION CONTROLLER
+         =========================================== -->
+    <script>
+        /* === SLIDE PRESENTATION === */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.isScrolling = false;
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupProgressBar();
+                this.setupNavDots();
+            }
+
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const idx = Array.from(this.slides).indexOf(entry.target);
+                            if (idx !== -1) {
+                                this.currentSlide = idx;
+                                this.updateProgressBar();
+                                this.updateNavDots();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.target.getAttribute('contenteditable') === 'true') return;
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.goTo(Math.min(this.currentSlide + 1, this.slides.length - 1));
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.goTo(Math.max(this.currentSlide - 1, 0));
+                    } else if (e.key === 'Home') {
+                        e.preventDefault();
+                        this.goTo(0);
+                    } else if (e.key === 'End') {
+                        e.preventDefault();
+                        this.goTo(this.slides.length - 1);
+                    }
+                });
+            }
+
+            setupTouchNav() {
+                let startY = 0;
+                let startX = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diffY = startY - e.changedTouches[0].clientY;
+                    const diffX = startX - e.changedTouches[0].clientX;
+                    if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 50) {
+                        if (diffY > 0) {
+                            this.goTo(Math.min(this.currentSlide + 1, this.slides.length - 1));
+                        } else {
+                            this.goTo(Math.max(this.currentSlide - 1, 0));
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            setupProgressBar() {
+                this.progressBar = document.getElementById('progressBar');
+                this.updateProgressBar();
+            }
+
+            updateProgressBar() {
+                if (this.progressBar) {
+                    const progress = ((this.currentSlide + 1) / this.slides.length) * 100;
+                    this.progressBar.style.width = progress + '%';
+                }
+            }
+
+            setupNavDots() {
+                const nav = document.getElementById('navDots');
+                if (!nav) return;
+                nav.innerHTML = '';
+                this.slides.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    dot.addEventListener('click', () => this.goTo(i));
+                    nav.appendChild(dot);
+                });
+                this.dots = nav.querySelectorAll('.nav-dot');
+            }
+
+            updateNavDots() {
+                if (!this.dots) return;
+                this.dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            goTo(index) {
+                if (index >= 0 && index < this.slides.length) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        /* === INLINE EDITOR === */
+        class InlineEditor {
+            constructor() {
+                this.isActive = false;
+                this.editToggle = document.getElementById('editToggle');
+                this.setupHotzone();
+                this.setupKeyboard();
+                this.loadSaved();
+            }
+
+            setupHotzone() {
+                const hotzone = document.getElementById('editHotzone');
+                const editToggle = this.editToggle;
+                let hideTimeout = null;
+
+                hotzone.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    editToggle.classList.add('show');
+                });
+                hotzone.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.isActive) editToggle.classList.remove('show');
+                    }, 400);
+                });
+                editToggle.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                });
+                editToggle.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.isActive) editToggle.classList.remove('show');
+                    }, 400);
+                });
+                editToggle.addEventListener('click', () => this.toggleEditMode());
+                hotzone.addEventListener('click', () => this.toggleEditMode());
+            }
+
+            setupKeyboard() {
+                document.addEventListener('keydown', (e) => {
+                    if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+                        this.toggleEditMode();
+                    }
+                    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                        e.preventDefault();
+                        this.save();
+                    }
+                });
+            }
+
+            toggleEditMode() {
+                this.isActive = !this.isActive;
+                document.body.classList.toggle('edit-mode', this.isActive);
+                this.editToggle.classList.toggle('active', this.isActive);
+                this.editToggle.textContent = this.isActive ? '💾 Guardar (Ctrl+S)' : '✏️ Editar';
+
+                document.querySelectorAll('[data-editable]').forEach(el => {
+                    el.contentEditable = this.isActive ? 'true' : 'false';
+                });
+
+                if (!this.isActive) this.save();
+            }
+
+            save() {
+                const data = {};
+                document.querySelectorAll('[data-editable]').forEach((el, i) => {
+                    data[`e${i}`] = el.innerHTML;
+                });
+                localStorage.setItem('dmd-proposal', JSON.stringify(data));
+            }
+
+            loadSaved() {
+                try {
+                    const data = JSON.parse(localStorage.getItem('dmd-proposal'));
+                    if (data) {
+                        document.querySelectorAll('[data-editable]').forEach((el, i) => {
+                            if (data[`e${i}`] !== undefined) el.innerHTML = data[`e${i}`];
+                        });
+                    }
+                } catch (e) { /* ignore */ }
+            }
+        }
+
+        /* === INIT === */
+        const presentation = new SlidePresentation();
+        const editor = new InlineEditor();
+
+        /* Nav dot colors: update based on current slide bg */
+        const updateDotColors = () => {
+            const dots = document.querySelectorAll('.nav-dot');
+            const current = document.querySelector('.slide.visible') || document.querySelector('.slide');
+            const isDark = current && current.classList.contains('slide-dark');
+            dots.forEach(dot => {
+                if (!dot.classList.contains('active')) {
+                    dot.style.background = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(26,39,68,0.2)';
+                }
+            });
+        };
+
+        const observer = new MutationObserver(updateDotColors);
+        document.querySelectorAll('.slide').forEach(s => {
+            observer.observe(s, { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
+</body>
+</html>
