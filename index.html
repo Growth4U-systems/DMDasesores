@@ -143,6 +143,7 @@
             .timeline-grid { grid-template-columns: 1fr !important; }
             .diff-table { font-size: clamp(0.6rem, 2.5vw, 0.8rem); }
             .stack-grid { grid-template-columns: 1fr !important; }
+            .three-col { grid-template-columns: 1fr !important; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -850,54 +851,69 @@
     </section>
 
     <!-- =============================================
-         SLIDE 5 — APLICADO A DMD ASESORES (GAP ANALYSIS)
+         SLIDE 5 — PARTNERS: MEDIOS + INFLUENCERS + EJECUCIÓN
          ============================================= -->
     <section class="slide slide-light" id="slide-5">
         <div class="slide-content">
-            <span class="label reveal" data-editable>Gap Analysis — 34 gaps identificados</span>
-            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.4rem, 1vw, 0.7rem);">
-                Medios donde tus competidores <span class="accent">ya están y tú no</span>
+            <span class="label reveal" data-editable>Borrowed Trust Partners — 34 gaps · 66 influencers analizados</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);">
+                Medios e influencers donde tus competidores <span class="accent">ya están y tú no</span>
             </h2>
-            <p class="reveal" style="margin-bottom: clamp(0.4rem, 1vw, 0.7rem); font-size: var(--small-size); color: var(--gray-400);" data-editable>
-                31 keywords SERP analizadas · 317 resultados Google · 69 respuestas LLM · 742 citations procesadas
-            </p>
-            <div class="two-col reveal">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 0.8rem);" class="reveal three-col">
+                <!-- COLUMNA 1: MEDIOS -->
                 <div>
-                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);">Prioridad ALTA — Placement inmediato</h3>
-                    <ul class="sub-points" style="margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">
-                        <li data-editable><strong>HelpMyCash</strong> — Guías revolving + LSO (GEO+SEO)</li>
-                        <li data-editable><strong>Cinco Días / El País</strong> — Phishing, micropréstamos (GEO+SEO)</li>
-                        <li data-editable><strong>ASUFIN</strong> — Revolving, coches, LSO, micro (GEO+SEO)</li>
-                        <li data-editable><strong>El Economista</strong> — Micropréstamos (GEO+SEO)</li>
-                        <li data-editable><strong>La Vanguardia</strong> — Coches, revolving (GEO+SEO)</li>
-                        <li data-editable><strong>Expansión</strong> — Revolving, LSO (GEO)</li>
-                        <li data-editable><strong>Rankia</strong> — Foro LSO + blog revolving (GEO+SEO)</li>
-                        <li data-editable><strong>OCU</strong> — Revolving (GEO+SEO)</li>
+                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Medios — Prioridad ALTA</h3>
+                    <ul class="sub-points" style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <li data-editable><strong>HelpMyCash</strong> — Revolving + LSO</li>
+                        <li data-editable><strong>Cinco Días / El País</strong> — Phishing, micro</li>
+                        <li data-editable><strong>ASUFIN</strong> — Revolving, coches, LSO</li>
+                        <li data-editable><strong>El Economista</strong> — Micropréstamos</li>
+                        <li data-editable><strong>La Vanguardia</strong> — Coches, revolving</li>
+                        <li data-editable><strong>Expansión / Rankia</strong> — LSO</li>
+                        <li data-editable><strong>OCU</strong> — Revolving</li>
                     </ul>
-                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);">Prioridad MEDIA — Fase 2</h3>
+                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Prioridad MEDIA</h3>
                     <ul class="sub-points">
-                        <li data-editable><strong>Confilegal / Economist&Jurist</strong> — Medios legales especializados</li>
-                        <li data-editable><strong>El Confidencial / ABC / El Mundo</strong> — Prensa generalista</li>
-                        <li data-editable><strong>Kelisto / FACUA / ADICAE</strong> — Comparadores y consumidores</li>
-                        <li data-editable><strong>Noticias Jurídicas / Sepin</strong> — Referencia legal</li>
-                        <li data-editable><strong>RTVE</strong> — Phishing, revolving (GEO+SEO)</li>
+                        <li data-editable><strong>Confilegal / Economist&Jurist</strong></li>
+                        <li data-editable><strong>El Confidencial / ABC / El Mundo</strong></li>
+                        <li data-editable><strong>Kelisto / FACUA / ADICAE</strong></li>
+                        <li data-editable><strong>Noticias Jurídicas / RTVE</strong></li>
                     </ul>
                 </div>
+                <!-- COLUMNA 2: INFLUENCERS -->
                 <div>
-                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);">URLs concretas para pitch</h3>
-                    <ul class="sub-points" style="margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">
-                        <li data-editable>helpmycash.com/tarjetas-credito/reclamar-tarjetas-revolving/</li>
-                        <li data-editable>helpmycash.com/prestamos/ley-segunda-oportunidad/</li>
-                        <li data-editable>asufin.com/reclama/tarjetas/ y /prestamo-coche-usura/</li>
-                        <li data-editable>elpais.com/economia/mis-derechos/ — micropréstamos</li>
-                        <li data-editable>rankia.com — Foro LSO + Blog revolving</li>
-                        <li data-editable>kelisto.es — Guías reclamación revolving y LSO</li>
-                        <li data-editable>confilegal.com — Artículos despachos LSO</li>
-                        <li data-editable>clientebancario.bde.es — Portal Banco de España</li>
+                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Influencers — YouTube</h3>
+                    <ul class="sub-points" style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <li data-editable><strong>El Gran PREICANO</strong> — 310K · Injusticias financieras</li>
+                        <li data-editable><strong>Marc Vidal</strong> — 1.1M · Economía y tech</li>
+                        <li data-editable><strong>Ley De Mike</strong> — 6.9M · Abogado divulgador</li>
+                        <li data-editable><strong>Eli Defferary</strong> — 8K · Nicho puro banca</li>
+                        <li data-editable><strong>María Cardona</strong> — 45K · Abogada</li>
                     </ul>
-                    <div class="opportunity-banner">
-                        <span class="opp-icon">🎯</span>
-                        <p data-editable><strong>Dato clave:</strong> Tus competidores aparecen en estos medios en Google Y en respuestas de ChatGPT/Claude/Gemini. Cada día sin presencia aquí es tráfico orgánico que va a otros despachos.</p>
+                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Influencers — Instagram</h3>
+                    <ul class="sub-points">
+                        <li data-editable><strong>Pepe Maciá</strong> — @finan.personales</li>
+                        <li data-editable><strong>Dr. Finanzas</strong> — @doctorfinanzaspersonales</li>
+                    </ul>
+                </div>
+                <!-- COLUMNA 3: QUÉ HACEMOS NOSOTROS -->
+                <div>
+                    <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Nosotros nos encargamos de todo</h3>
+                    <div class="card-light" style="padding: clamp(0.5rem, 1vw, 0.8rem); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.15rem;">01 · Negociación</div>
+                        <p style="font-size: clamp(0.6rem, 0.9vw, 0.75rem);" data-editable>Contactamos medios e influencers, negociamos acuerdos (fee bajo + variable por activación). Vosotros solo aprobáis.</p>
+                    </div>
+                    <div class="card-light" style="padding: clamp(0.5rem, 1vw, 0.8rem); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.15rem;">02 · Briefs creativos</div>
+                        <p style="font-size: clamp(0.6rem, 0.9vw, 0.75rem);" data-editable>Creamos briefs con libertad creativa para cada partner: mensajes clave, oferta, claims regulados, #ad. No scripts rígidos.</p>
+                    </div>
+                    <div class="card-light" style="padding: clamp(0.5rem, 1vw, 0.8rem); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.15rem;">03 · Landing por partner</div>
+                        <p style="font-size: clamp(0.6rem, 0.9vw, 0.75rem);" data-editable>Landing page única por cada partner/influencer con tracking integrado. Captura datos antes del formulario genérico.</p>
+                    </div>
+                    <div class="card-light" style="padding: clamp(0.5rem, 1vw, 0.8rem); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
+                        <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.15rem;">04 · Atribución + Medición</div>
+                        <p style="font-size: clamp(0.6rem, 0.9vw, 0.75rem);" data-editable>Sistema de atribución por partner: sabéis exactamente cuántos leads y conversiones genera cada medio e influencer. Dashboard en tiempo real.</p>
                     </div>
                 </div>
             </div>
@@ -1072,91 +1088,34 @@
     </section>
 
     <!-- =============================================
-         SLIDE 9 — INFLUENCERS + STACK
+         SLIDE 9 — STACK TECNOLÓGICO
          ============================================= -->
     <section class="slide slide-dark" id="slide-9">
         <div class="slide-content">
-            <span class="label reveal" data-editable>Influencers + Herramientas — 66 perfiles analizados</span>
-            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.4rem, 1vw, 0.7rem);">
-                Influencers de <span class="accent">nicho legal-financiero</span> + nuestro stack
+            <span class="label reveal" data-editable>Nuestras herramientas</span>
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+                Stack <span class="accent">propio con IA</span>
             </h2>
-            <div class="two-col reveal">
-                <div>
-                    <h3 style="color: var(--white); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);" data-editable>YouTube — Alta relevancia</h3>
-                    <div class="partner-grid" style="margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);">
-                        <div class="partner-item">
-                            <span class="p-icon">🔥</span>
-                            <div>
-                                <div class="p-name" data-editable>El Gran PREICANO</div>
-                                <div class="p-type">310K subs · Injusticias financieras</div>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <span class="p-icon">📈</span>
-                            <div>
-                                <div class="p-name" data-editable>Marc Vidal</div>
-                                <div class="p-type">1.1M subs · Economía y tech</div>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <span class="p-icon">⚖️</span>
-                            <div>
-                                <div class="p-name" data-editable>Ley De Mike</div>
-                                <div class="p-type">6.9M subs · Abogado divulgador</div>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <span class="p-icon">🏦</span>
-                            <div>
-                                <div class="p-name" data-editable>Eli Defferary</div>
-                                <div class="p-type">8K subs · Nicho puro banca</div>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <span class="p-icon">👩‍⚖️</span>
-                            <div>
-                                <div class="p-name" data-editable>María Cardona</div>
-                                <div class="p-type">45K subs · Abogada</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 style="color: var(--white); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);" data-editable>Instagram — Finanzas personales</h3>
-                    <div class="partner-grid">
-                        <div class="partner-item">
-                            <span class="p-icon">💰</span>
-                            <div>
-                                <div class="p-name" data-editable>Pepe Maciá</div>
-                                <div class="p-type">@finan.personales · Target exacto</div>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <span class="p-icon">🩺</span>
-                            <div>
-                                <div class="p-name" data-editable>Dr. Finanzas</div>
-                                <div class="p-type">@doctorfinanzaspersonales</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="stack-grid reveal">
+                <div class="card-tool">
+                    <div class="tool-icon">🧠</div>
+                    <h3 data-editable>Sancho CMO</h3>
+                    <p data-editable>IA para research competitivo, identificación de partners y gap analysis automatizado. Analiza 31 keywords, 317 resultados y 742 citations en minutos.</p>
                 </div>
-                <div>
-                    <h3 style="color: var(--white); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); font-size: clamp(0.85rem, 1.6vw, 1.1rem);" data-editable>Nuestro stack con IA</h3>
-                    <div style="display: flex; flex-direction: column; gap: clamp(0.3rem, 0.8vw, 0.5rem);">
-                        <div class="card-tool" style="padding: clamp(0.5rem, 1vw, 0.8rem);">
-                            <h3 style="font-size: var(--small-size);" data-editable>🧠 Sancho CMO — Research competitivo e identificación de partners con IA</h3>
-                        </div>
-                        <div class="card-tool" style="padding: clamp(0.5rem, 1vw, 0.8rem);">
-                            <h3 style="font-size: var(--small-size);" data-editable>🔍 Horus — SEO + GEO: domina Google y buscadores IA (ChatGPT, Claude, Gemini)</h3>
-                        </div>
-                        <div class="card-tool" style="padding: clamp(0.5rem, 1vw, 0.8rem);">
-                            <h3 style="font-size: var(--small-size);" data-editable>🏗️ Alarife — Landings optimizadas por nicho y partner</h3>
-                        </div>
-                        <div class="card-tool" style="padding: clamp(0.5rem, 1vw, 0.8rem);">
-                            <h3 style="font-size: var(--small-size);" data-editable>📊 PostHog + GHL — Analytics, CRM y tracking multi-touch</h3>
-                        </div>
-                    </div>
-                    <div class="quote-block" style="margin-top: clamp(0.3rem, 0.8vw, 0.5rem);" data-editable>
-                        Modelo de influencers: fee bajo + variable por activación real. Sin coste fijo — alineamos incentivos con resultados.
-                    </div>
+                <div class="card-tool">
+                    <div class="tool-icon">🔍</div>
+                    <h3 data-editable>Horus</h3>
+                    <p data-editable>Motor de SEO y GEO. Domina resultados en Google y buscadores IA (ChatGPT, Claude, Gemini) para keywords de confianza.</p>
+                </div>
+                <div class="card-tool">
+                    <div class="tool-icon">🏗️</div>
+                    <h3 data-editable>Alarife</h3>
+                    <p data-editable>Creación rápida de landings específicas por partner e influencer, con tracking integrado y optimizadas para conversión.</p>
+                </div>
+                <div class="card-tool">
+                    <div class="tool-icon">📊</div>
+                    <h3 data-editable>PostHog + GHL</h3>
+                    <p data-editable>Analytics, CRM y automatizaciones. Sistema de atribución multi-touch: sabéis qué partner genera cada lead y cada conversión.</p>
                 </div>
             </div>
         </div>
