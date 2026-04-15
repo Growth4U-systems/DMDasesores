@@ -135,7 +135,8 @@
         }
 
         @media (max-width: 600px) {
-            :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); }
+            :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); --slide-padding: clamp(1rem, 3vw, 1.5rem); }
+            #slide-1 img, #slide-10 img { height: clamp(40px, 12vw, 60px) !important; }
             .grid { grid-template-columns: 1fr; }
             .two-col { flex-direction: column !important; }
             .pillar-grid { grid-template-columns: 1fr !important; }
@@ -858,7 +859,7 @@
          ============================================= -->
     <section class="slide slide-light" id="slide-5">
         <div class="slide-content">
-            <span class="label reveal" data-editable>Borrowed Trust Partners — 34 gaps · 66 influencers analizados</span>
+            <span class="label reveal" data-editable>Borrowed Trust Partners — Oportunidades clave identificadas</span>
             <h2 class="reveal" data-editable style="margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);">
                 Medios e influencers donde tus competidores <span class="accent">ya están y tú no</span>
             </h2>
@@ -868,35 +869,24 @@
                     <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Medios — Prioridad ALTA</h3>
                     <ul class="sub-points" style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
                         <li data-editable><strong>HelpMyCash</strong> — Revolving + LSO</li>
-                        <li data-editable><strong>Cinco Días / El País</strong> — Phishing, micro</li>
-                        <li data-editable><strong>ASUFIN</strong> — Revolving, coches, LSO</li>
-                        <li data-editable><strong>El Economista</strong> — Micropréstamos</li>
-                        <li data-editable><strong>La Vanguardia</strong> — Coches, revolving</li>
-                        <li data-editable><strong>Expansión / Rankia</strong> — LSO</li>
-                        <li data-editable><strong>OCU</strong> — Revolving</li>
+                        <li data-editable><strong>Cinco Días / El País</strong> — Reclamaciones bancarias</li>
                     </ul>
                     <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Prioridad MEDIA</h3>
                     <ul class="sub-points">
-                        <li data-editable><strong>Confilegal / Economist&Jurist</strong></li>
-                        <li data-editable><strong>El Confidencial / ABC / El Mundo</strong></li>
-                        <li data-editable><strong>Kelisto / FACUA / ADICAE</strong></li>
-                        <li data-editable><strong>Noticias Jurídicas / RTVE</strong></li>
+                        <li data-editable><strong>ASUFIN / OCU</strong> — Asociaciones consumidores</li>
+                        <li data-editable><strong>El Confidencial / Expansión</strong> — Prensa generalista</li>
                     </ul>
                 </div>
                 <!-- COLUMNA 2: INFLUENCERS -->
                 <div>
                     <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Influencers — YouTube</h3>
                     <ul class="sub-points" style="margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);">
-                        <li data-editable><strong>El Gran PREICANO</strong> — 310K · Injusticias financieras</li>
-                        <li data-editable><strong>Marc Vidal</strong> — 1.1M · Economía y tech</li>
-                        <li data-editable><strong>Ley De Mike</strong> — 6.9M · Abogado divulgador</li>
-                        <li data-editable><strong>Eli Defferary</strong> — 8K · Nicho puro banca</li>
-                        <li data-editable><strong>María Cardona</strong> — 45K · Abogada</li>
+                        <li data-editable><strong>El Gran PREICANO</strong> — 310K · Abusos bancarios y deudas</li>
+                        <li data-editable><strong>Eli Defferary</strong> — 8K · Nicho puro reclamaciones banca</li>
                     </ul>
                     <h3 data-editable style="margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem); font-size: clamp(0.8rem, 1.5vw, 1rem);">Influencers — Instagram</h3>
                     <ul class="sub-points">
-                        <li data-editable><strong>Pepe Maciá</strong> — @finan.personales</li>
-                        <li data-editable><strong>Dr. Finanzas</strong> — @doctorfinanzaspersonales</li>
+                        <li data-editable><strong>Pepe Maciá</strong> — @finan.personales · Deudas y ahorro</li>
                     </ul>
                 </div>
                 <!-- COLUMNA 3: QUÉ HACEMOS NOSOTROS -->
@@ -1002,11 +992,8 @@
                     <div class="phase-label">Mes 1-2 — Medios editoriales</div>
                     <h3 data-editable>Niche Editing + Partnerships</h3>
                     <ul>
-                        <li data-editable>Pitch a HelpMyCash, Kelisto, Confilegal → inclusión en rankings y guías</li>
-                        <li data-editable>Guest posts en Economist&Jurist y blog Sepin</li>
-                        <li data-editable>Pitch a Rankia (foro + blog revolving)</li>
+                        <li data-editable>Pitch a HelpMyCash + Cinco Días → inclusión en rankings y guías</li>
                         <li data-editable>Setup atribución y tracking multi-touch</li>
-                        <li data-editable>Sistema automatizado de reviews (640 → 1.000+)</li>
                     </ul>
                 </div>
                 <div class="card-light timeline-card">
@@ -1014,21 +1001,15 @@
                     <h3 data-editable>PR + Data propietaria</h3>
                     <ul>
                         <li data-editable>Nota de prensa: "DMD recupera X€ para víctimas de revolving"</li>
-                        <li data-editable>Target: Cinco Días, El País, El Confidencial, Expansión</li>
-                        <li data-editable>Artículos SEO propios por nicho (autónomos, mayores, jóvenes)</li>
                         <li data-editable>GEO: posicionar en ChatGPT, Claude, Gemini</li>
-                        <li data-editable>Contenido de nicho en blog DMD</li>
                     </ul>
                 </div>
                 <div class="card-light timeline-card">
                     <div class="phase-label">Mes 5-6 — Influencers + Escala</div>
                     <h3 data-editable>Activación a variable</h3>
                     <ul>
-                        <li data-editable>El Gran PREICANO (310K) — contenido sobre revolving</li>
-                        <li data-editable>Eli Defferary (8K) — micro-influencer banca, alta conversión</li>
-                        <li data-editable>Pepe Maciá / Dr. Finanzas (IG) — educativo sobre deudas</li>
-                        <li data-editable>Escalar canales con mejor ROAS</li>
-                        <li data-editable>Documentación completa y handover</li>
+                        <li data-editable>El Gran PREICANO (310K) — contenido sobre abusos bancarios</li>
+                        <li data-editable>Escalar canales con mejor ROAS + handover</li>
                     </ul>
                 </div>
             </div>
