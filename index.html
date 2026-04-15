@@ -919,45 +919,115 @@
     <section class="slide slide-light" id="slide-6">
         <div class="slide-content">
             <span class="label reveal" data-editable>Sistema de medición</span>
-            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.5rem, 1.5vw, 1rem);">
+            <h2 class="reveal" data-editable style="margin-bottom: clamp(0.4rem, 1vw, 0.8rem);">
                 Cómo <span class="accent">medimos y optimizamos</span> cada campaña
             </h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(0.5rem, 1.5vw, 1.2rem); margin-bottom: clamp(0.5rem, 1.5vw, 1rem);" class="reveal three-col">
-                <!-- PASO 1 -->
-                <div class="card-light" style="text-align: center;">
-                    <div style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">🤝</div>
-                    <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em;">01 · Conectamos</div>
-                    <h3 data-editable style="font-size: clamp(0.85rem, 1.3vw, 1.1rem); margin-bottom: 0.3rem;">Influencer + Medio</h3>
-                    <p data-editable style="font-size: clamp(0.65rem, 0.9vw, 0.8rem);">Negociamos el acuerdo con cada partner. Fee bajo + variable por activación. Vosotros solo aprobáis.</p>
+            <!-- FLUJO COMPACTO -->
+            <div class="reveal" style="display: flex; align-items: center; justify-content: center; gap: clamp(0.2rem, 0.6vw, 0.5rem); flex-wrap: wrap; margin-bottom: clamp(0.4rem, 1vw, 0.8rem);">
+                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem) clamp(0.4rem, 0.8vw, 0.6rem); font-size: var(--label-size); font-weight: 600; color: var(--navy);">🤝 Conectamos partner</div>
+                <span style="color: var(--green); font-weight: 700;">→</span>
+                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem) clamp(0.4rem, 0.8vw, 0.6rem); font-size: var(--label-size); font-weight: 600; color: var(--navy);">🎯 Landing específica</div>
+                <span style="color: var(--green); font-weight: 700;">→</span>
+                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem) clamp(0.4rem, 0.8vw, 0.6rem); font-size: var(--label-size); font-weight: 600; color: var(--navy);">📊 Dashboard por partner</div>
+            </div>
+            <!-- MOCKUPS: LANDING + DASHBOARD -->
+            <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(0.5rem, 1.5vw, 1.2rem);" class="reveal two-col">
+                <!-- MINI LANDING MOCKUP -->
+                <div style="background: #fff; border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+                    <!-- Browser chrome -->
+                    <div style="background: var(--gray-200); padding: clamp(0.2rem, 0.4vw, 0.35rem) clamp(0.4rem, 0.8vw, 0.6rem); display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #ff5f57;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #ffbd2e;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #28c840;"></div>
+                        <div style="flex:1; background: #fff; border-radius: 4px; padding: 2px 6px; margin-left: 6px; font-size: clamp(0.45rem, 0.6vw, 0.55rem); color: var(--gray-400);">dmdasesores.com/p/<strong style="color: var(--green);">el-gran-preicano</strong></div>
+                    </div>
+                    <!-- Landing content -->
+                    <div style="padding: clamp(0.5rem, 1vw, 0.8rem);">
+                        <div style="background: var(--navy); border-radius: 8px; padding: clamp(0.4rem, 0.8vw, 0.6rem); margin-bottom: clamp(0.3rem, 0.5vw, 0.4rem); text-align: center;">
+                            <div style="font-size: clamp(0.5rem, 0.7vw, 0.6rem); color: rgba(255,255,255,0.5); margin-bottom: 2px;">LANDING EXCLUSIVA</div>
+                            <div style="font-size: clamp(0.65rem, 1vw, 0.85rem); font-weight: 800; color: #fff;">¿Te cobran intereses abusivos?</div>
+                            <div style="font-size: clamp(0.5rem, 0.7vw, 0.6rem); color: var(--green); margin-top: 2px;">Vía El Gran PREICANO</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: clamp(0.15rem, 0.3vw, 0.25rem);">
+                            <div style="background: var(--gray-100); border-radius: 4px; padding: clamp(0.15rem, 0.3vw, 0.25rem) clamp(0.3rem, 0.5vw, 0.4rem); font-size: clamp(0.45rem, 0.6vw, 0.55rem); color: var(--gray-400);">Nombre completo</div>
+                            <div style="background: var(--gray-100); border-radius: 4px; padding: clamp(0.15rem, 0.3vw, 0.25rem) clamp(0.3rem, 0.5vw, 0.4rem); font-size: clamp(0.45rem, 0.6vw, 0.55rem); color: var(--gray-400);">Teléfono</div>
+                            <div style="background: var(--gray-100); border-radius: 4px; padding: clamp(0.15rem, 0.3vw, 0.25rem) clamp(0.3rem, 0.5vw, 0.4rem); font-size: clamp(0.45rem, 0.6vw, 0.55rem); color: var(--gray-400);">¿Qué producto tienes? ▾</div>
+                            <div style="background: var(--green); color: var(--navy); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem); text-align: center; font-size: clamp(0.5rem, 0.7vw, 0.6rem); font-weight: 700;">Consulta gratuita →</div>
+                        </div>
+                        <div style="text-align: center; margin-top: clamp(0.2rem, 0.3vw, 0.25rem); font-size: clamp(0.4rem, 0.55vw, 0.5rem); color: var(--gray-400);">🔒 Tracking: UTM + PostHog + CRM</div>
+                    </div>
                 </div>
-                <!-- PASO 2 -->
-                <div class="card-light" style="text-align: center;">
-                    <div style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">🎯</div>
-                    <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em;">02 · Landing específica</div>
-                    <h3 data-editable style="font-size: clamp(0.85rem, 1.3vw, 1.1rem); margin-bottom: 0.3rem;">1 partner = 1 landing</h3>
-                    <p data-editable style="font-size: clamp(0.65rem, 0.9vw, 0.8rem);">Cada influencer y medio tiene su propia landing con tracking integrado. Captura datos antes del formulario genérico.</p>
-                </div>
-                <!-- PASO 3 -->
-                <div class="card-light" style="text-align: center;">
-                    <div style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">📊</div>
-                    <div style="font-weight: 700; font-size: var(--small-size); color: var(--green); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em;">03 · Dashboard por partner</div>
-                    <h3 data-editable style="font-size: clamp(0.85rem, 1.3vw, 1.1rem); margin-bottom: 0.3rem;">Atribución real</h3>
-                    <p data-editable style="font-size: clamp(0.65rem, 0.9vw, 0.8rem);">Dashboard en tiempo real por cada partner: leads, conversiones, coste por lead y ROAS. Sabéis exactamente qué funciona.</p>
+                <!-- MINI DASHBOARD MOCKUP -->
+                <div style="background: #fff; border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+                    <!-- Browser chrome -->
+                    <div style="background: var(--gray-200); padding: clamp(0.2rem, 0.4vw, 0.35rem) clamp(0.4rem, 0.8vw, 0.6rem); display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #ff5f57;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #ffbd2e;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #28c840;"></div>
+                        <div style="flex:1; background: #fff; border-radius: 4px; padding: 2px 6px; margin-left: 6px; font-size: clamp(0.45rem, 0.6vw, 0.55rem); color: var(--gray-400);">dashboard.growth4u.io/<strong style="color: var(--green);">dmd-asesores</strong></div>
+                    </div>
+                    <!-- Dashboard content -->
+                    <div style="padding: clamp(0.4rem, 0.8vw, 0.7rem);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: clamp(0.3rem, 0.5vw, 0.4rem);">
+                            <div style="font-size: clamp(0.6rem, 0.9vw, 0.75rem); font-weight: 700; color: var(--navy);">Partners · Abril 2026</div>
+                            <div style="font-size: clamp(0.4rem, 0.55vw, 0.5rem); background: var(--green-light); color: var(--green); padding: 2px 6px; border-radius: 4px; font-weight: 600;">En vivo</div>
+                        </div>
+                        <!-- KPIs row -->
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.2rem, 0.4vw, 0.3rem); margin-bottom: clamp(0.3rem, 0.5vw, 0.4rem);">
+                            <div style="background: var(--gray-50); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem); text-align: center;">
+                                <div style="font-size: clamp(0.7rem, 1.1vw, 0.95rem); font-weight: 800; color: var(--green);">847</div>
+                                <div style="font-size: clamp(0.35rem, 0.5vw, 0.45rem); color: var(--gray-400);">Visitas</div>
+                            </div>
+                            <div style="background: var(--gray-50); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem); text-align: center;">
+                                <div style="font-size: clamp(0.7rem, 1.1vw, 0.95rem); font-weight: 800; color: var(--green);">124</div>
+                                <div style="font-size: clamp(0.35rem, 0.5vw, 0.45rem); color: var(--gray-400);">Leads</div>
+                            </div>
+                            <div style="background: var(--gray-50); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem); text-align: center;">
+                                <div style="font-size: clamp(0.7rem, 1.1vw, 0.95rem); font-weight: 800; color: var(--green);">14.6%</div>
+                                <div style="font-size: clamp(0.35rem, 0.5vw, 0.45rem); color: var(--gray-400);">Conversión</div>
+                            </div>
+                            <div style="background: var(--gray-50); border-radius: 6px; padding: clamp(0.2rem, 0.4vw, 0.3rem); text-align: center;">
+                                <div style="font-size: clamp(0.7rem, 1.1vw, 0.95rem); font-weight: 800; color: var(--green);">38€</div>
+                                <div style="font-size: clamp(0.35rem, 0.5vw, 0.45rem); color: var(--gray-400);">CPL</div>
+                            </div>
+                        </div>
+                        <!-- Table -->
+                        <div style="border: 1px solid var(--gray-200); border-radius: 6px; overflow: hidden; font-size: clamp(0.4rem, 0.6vw, 0.55rem);">
+                            <div style="display: grid; grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr 0.7fr; background: var(--navy); color: rgba(255,255,255,0.7); padding: clamp(0.15rem, 0.3vw, 0.25rem) clamp(0.3rem, 0.5vw, 0.4rem); font-weight: 600;">
+                                <div>Partner</div><div style="text-align:right">Visitas</div><div style="text-align:right">Leads</div><div style="text-align:right">Conv.</div><div style="text-align:right">CPL</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr 0.7fr; padding: clamp(0.15rem, 0.3vw, 0.2rem) clamp(0.3rem, 0.5vw, 0.4rem); border-bottom: 1px solid var(--gray-200); color: var(--navy);">
+                                <div style="font-weight: 600;">El Gran PREICANO</div><div style="text-align:right">412</div><div style="text-align:right">68</div><div style="text-align:right; color: var(--green); font-weight:700;">16.5%</div><div style="text-align:right">32€</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr 0.7fr; padding: clamp(0.15rem, 0.3vw, 0.2rem) clamp(0.3rem, 0.5vw, 0.4rem); border-bottom: 1px solid var(--gray-200); color: var(--navy);">
+                                <div style="font-weight: 600;">HelpMyCash</div><div style="text-align:right">289</div><div style="text-align:right">38</div><div style="text-align:right; color: var(--green); font-weight:700;">13.1%</div><div style="text-align:right">41€</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr 0.7fr; padding: clamp(0.15rem, 0.3vw, 0.2rem) clamp(0.3rem, 0.5vw, 0.4rem); color: var(--navy);">
+                                <div style="font-weight: 600;">Eli Defferary</div><div style="text-align:right">146</div><div style="text-align:right">18</div><div style="text-align:right; color: var(--green); font-weight:700;">12.3%</div><div style="text-align:right">44€</div>
+                            </div>
+                        </div>
+                        <!-- Mini chart hint -->
+                        <div style="display: flex; align-items: flex-end; gap: 2px; margin-top: clamp(0.2rem, 0.4vw, 0.3rem); height: clamp(18px, 2.5vw, 30px);">
+                            <div style="flex:1; background: rgba(46,196,160,0.15); border-radius: 2px 2px 0 0; height: 40%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.2); border-radius: 2px 2px 0 0; height: 55%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.25); border-radius: 2px 2px 0 0; height: 45%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.3); border-radius: 2px 2px 0 0; height: 60%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.35); border-radius: 2px 2px 0 0; height: 50%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.4); border-radius: 2px 2px 0 0; height: 70%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.5); border-radius: 2px 2px 0 0; height: 65%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.55); border-radius: 2px 2px 0 0; height: 80%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.6); border-radius: 2px 2px 0 0; height: 75%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.7); border-radius: 2px 2px 0 0; height: 90%;"></div>
+                            <div style="flex:1; background: rgba(46,196,160,0.8); border-radius: 2px 2px 0 0; height: 85%;"></div>
+                            <div style="flex:1; background: var(--green); border-radius: 2px 2px 0 0; height: 100%;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: clamp(0.3rem, 0.45vw, 0.4rem); color: var(--gray-400); margin-top: 2px;">
+                            <span>Abr 1</span><span>Abr 15</span><span>Abr 30</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- FLUJO VISUAL -->
-            <div class="reveal" style="display: flex; align-items: center; justify-content: center; gap: clamp(0.3rem, 1vw, 0.8rem); flex-wrap: wrap; margin-bottom: clamp(0.3rem, 1vw, 0.6rem);">
-                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 8px; padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.6rem, 1vw, 0.8rem); font-size: var(--small-size); font-weight: 600; color: var(--navy);">Partner publica</div>
-                <span style="color: var(--green); font-size: var(--body-size); font-weight: 700;">→</span>
-                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 8px; padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.6rem, 1vw, 0.8rem); font-size: var(--small-size); font-weight: 600; color: var(--navy);">Usuario llega a landing</div>
-                <span style="color: var(--green); font-size: var(--body-size); font-weight: 700;">→</span>
-                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 8px; padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.6rem, 1vw, 0.8rem); font-size: var(--small-size); font-weight: 600; color: var(--navy);">Tracking por evento</div>
-                <span style="color: var(--green); font-size: var(--body-size); font-weight: 700;">→</span>
-                <div style="background: rgba(46,196,160,0.08); border: 1px solid rgba(46,196,160,0.25); border-radius: 8px; padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.6rem, 1vw, 0.8rem); font-size: var(--small-size); font-weight: 600; color: var(--navy);">CRM + Dashboard</div>
-            </div>
-            <div class="quote-block reveal" style="max-width: 700px; margin: 0 auto;">
-                <p style="font-size: var(--small-size); margin: 0;" data-editable>"No invertimos a ciegas. Cada euro que va a un partner se mide con el mismo rigor que vuestras campañas de Meta Ads."</p>
-            </div>
+            <p class="reveal" style="text-align: center; font-size: var(--small-size); color: var(--gray-400); margin-top: clamp(0.3rem, 0.6vw, 0.5rem);">Cada euro que va a un partner se mide con el mismo rigor que vuestras campañas de Meta Ads.</p>
         </div>
     </section>
 
