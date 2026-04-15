@@ -605,15 +605,25 @@
         .partner-item .p-name { font-size: var(--small-size); font-weight: 600; color: var(--white); }
         .partner-item .p-type { font-size: clamp(0.5rem, 0.8vw, 0.65rem); color: rgba(255,255,255,0.5); }
 
+        /* Slide 5 — Borrowed Trust Partners: loosen spacing */
+        #slide-5 .three-col { gap: clamp(1rem, 2.2vw, 2rem) !important; }
+        #slide-5 h3 { font-size: clamp(0.95rem, 1.7vw, 1.15rem) !important; margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem) !important; }
+        #slide-5 .sub-points { margin-bottom: clamp(0.7rem, 1.4vw, 1.1rem) !important; }
+        #slide-5 .sub-points li { padding: 0.35rem 0 !important; font-size: var(--body-size) !important; line-height: 1.5 !important; }
+        #slide-5 .card-light { padding: clamp(0.8rem, 1.5vw, 1.2rem) !important; margin-bottom: clamp(0.45rem, 0.9vw, 0.7rem) !important; }
+        #slide-5 .card-light > div:first-child { font-size: var(--small-size) !important; margin-bottom: 0.35rem !important; }
+        #slide-5 .card-light p { font-size: clamp(0.72rem, 1.15vw, 0.9rem) !important; line-height: 1.5 !important; }
+
         /* Sub-list styling */
         .sub-points {
             list-style: none;
             padding: 0;
-            margin-top: clamp(0.2rem, 0.5vw, 0.4rem);
+            margin-top: clamp(0.35rem, 0.8vw, 0.65rem);
         }
         .sub-points li {
-            font-size: var(--small-size);
-            padding: 0.1rem 0;
+            font-size: var(--body-size);
+            padding: 0.3rem 0;
+            line-height: 1.55;
             padding-left: 1.2em;
             position: relative;
             color: var(--gray-700);
